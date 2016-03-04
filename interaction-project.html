@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>Processing Template</title>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.13/addons/p5.dom.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.13/p5.js"></script>
+    <script>
+        var snow;//
+        var color;
+
+        function setup() {
+            createCanvas(400, 350)
+            background(0, 0, 200)
+
+        }
+
+        function draw() {
+
+        }
+
+        function mousePressed() {
+            fill(0, 255, 0)
+            
+            //tree
+            triangle(103, 130, 29, 220, 176, 220);
+            triangle(103, 70, 47, 160, 160, 160);
+            triangle(103, 10, 66, 100, 139, 100);
+            
+            fill(153, 76, 0)
+            
+            // Tree log
+            rect(83, 221, 40, 133);
+
+        }
+
+        function mouseMoved() {
+            snow = random(200);//makes snow a random number bettwen 0 and 200
+            noStroke()
+            fill(255)
+            
+            //location of snow falkes based on the 
+            //subtraction of the random number by "snow"
+            ellipse(mouseX - snow, mouseY - snow, 5, 5)
+        }
+
+        function mouseDragged() {
+            snow = random(200);//makes snow a random number bettwen 0 and 200
+            noStroke()
+            fill(random(255), 60, 0)
+            
+            //location of glitter based on the 
+            //subtraction of the random number by "snow"
+            ellipse(mouseX - snow, mouseY - snow, 5, 5)
+        }
+
+        function keyPressed() {
+            fill(255, 255, 0)
+            ellipse(103, 10, 15, 15)//shiny "star"
+            fill(random(255), random(255), random(255))
+            rect(176, 300, 100, 50)//present
+            stroke(0)
+            line(176, 300, 227, 350)//line 1
+            line(276, 300, 227, 350)//line 2
+
+
+        }
+    </script>
+</head>
+
+<body>
+<form><input TYPE="button" onClick="history.go(0)" value="Reset"></form>
+
+</body>
+
+</html>
